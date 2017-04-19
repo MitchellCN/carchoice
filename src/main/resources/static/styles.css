@@ -1,0 +1,26 @@
+body {
+    background-color: dodgerblue;
+    background-position: top;
+    background-image: url(images/chromeWheel.PNG);
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+nav li{
+    font-style: italic;
+    display: inline-table;
+    padding: 0.25em;
+    margin: 0.175em;
+    border: 1px solid whitesmoke;
+}
+
+h1{font-size: 4em;
+    font-family: Noteworthy;
+    color: midnightblue;
+
+}
+
+p{
+    font-family: Inconsolata;
+    color: silver;
+    font-size: 2em;
+}

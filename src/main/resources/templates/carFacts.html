@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+
+    <title>Make/Model</title>
+
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html" th:href="@{/}">Car Make</a></li>
+        <li><a href="carFacts.html" th:href="@{/personForm}">Car Model</a></li>
+    </ul>
+</nav>
+<!--<div th:text="${car}">body</div>-->
+<h1>Make/Model</h1>
+<form action="index.html" th:action="@{/savePerson}" method="post" th:object="${person}">
+    <label>
+        <span>Car Model:</span>
+        <input type="text" name="carModel" value="" th:value = "*{carModel}" required="required"/>
+    </label>
+
+    <label>
+        <span>Car Make:</span>
+        <input type="text" name="carMake" value="" th:value = "*{carMake}"/>
+    </label>
+
+    <label>
+        <span>Car Year:</span>
+        <input type="text" name="carYear" value="" th:value = "*{carYear}"/>
+    </label>
+
+    <input type="hidden" name="carId" value="" th:value = "*{carId}"/>
+
+    <button>Save Person</button>
+</form>
+</body>
+</html>
