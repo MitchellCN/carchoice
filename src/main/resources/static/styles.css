@@ -1,9 +1,9 @@
 body {
     background-color: dodgerblue;
     background-position: top;
-    background-image: url(images/chromeWheel.PNG);
+    background-image: url(images/riviera4.jpg);
     background-repeat: no-repeat;
-    background-size: 75%;
+    background-size: cover;
 }
 nav li{
     font-style: italic;
@@ -14,8 +14,12 @@ nav li{
 }
 
 h1{font-size: 4em;
-    font-family: Noteworthy;
-    color: midnightblue;
+    font-family: "Times New Roman";
+    color: snow;
+
+}
+
+label{color:snow;
 
 }
 

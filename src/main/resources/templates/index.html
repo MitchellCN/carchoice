@@ -16,12 +16,33 @@
         <li><a href="carFacts.html">Car Model</a></li>
 
     </ul>
+
+<label>Car Year</label>
+    <select id = "Car Year">
+        <option value = "1">select</option>
+        <option value = "2">1950</option>
+        <option value = "3">1951</option>
+
+    </select>
+
+    <div>
+
+    </div>
+
+    <label>Car Model</label>
+    <select id = "Car Model">
+        <option value = "1">select</option>
+        <option value = "2">Ford</option>
+        <option value = "3">Chevrolet</option>
+    </select>
+
+
 </nav>
 <!--<div th:text="${car}">body</div>-->
 <form action="index.html" th:action="@{/}" method="post">
     <label>
         <span>SEARCH:</span>
-        <input type="text" name="Search" value="" th:value="${search}"/>
+        <input type="text" name="search" value="" th:value="${search}"/>
     </label>
     <button>Press Here</button>
 </form>
