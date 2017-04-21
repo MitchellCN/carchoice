@@ -3,6 +3,7 @@ package com.carchoice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,31 +13,40 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class CarController {
 
+//    @Autowired
+//    CarRepository carRepository;
+//
+//    @RequestMapping("/")
+//    public String carlist(Model model, @RequestParam(defaultValue = "") String search) {
+//
+//        model.addAttribute("search", search);
+//        model.addAttribute("car", carRepository.listCars(search));
+//
+//        return "index";
+//    }
+//
+//    @RequestMapping("/carFacts")
+//    public String carFacts(Model model, Integer carId) {
+//
+//        if (carId == null) {
+//            Car car = new Car();
+//            model.addAttribute("car", car);
+//
+//        } else {
+//            model.addAttribute("car", carRepository.getCar(carId));
+//
+//        }
+//        return "carFacts";
+//    }
+
     @Autowired
-    CarRepository carRepository;
+    public CarQueryService carqueryservice;
 
-    @RequestMapping("/")
-    public String carlist(Model model, @RequestParam(defaultValue = "")String search){
+    @RequestMapping(path = "/")
+    public String Makes(ModelMap model) {
 
-        model.addAttribute("search", search);
-        model.addAttribute("car", carRepository.listCars(search));
+        model.addAttribute("make", carqueryservice.listMakes());
 
-        return "index";
+        return "make";
     }
-
-    @RequestMapping("/carFacts")
-    public String carFacts(Model model, Integer carId){
-
-        if(carId ==null) {
-            Car car = new Car();
-            model.addAttribute("car", car);
-
-        }else{
-            model.addAttribute("car", carRepository.getCar(carId));
-
-        }
-        return "carFacts";
-    }
-
-
 }
