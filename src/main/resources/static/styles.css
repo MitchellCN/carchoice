@@ -1,7 +1,23 @@
-body {
-    background-color: dodgerblue;
+#index {
+    background-color: purple;
     background-position: top;
-    background-image: url(images/riviera4.jpg);
+    background-image: url("images/riviera4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carFacts{
+    background-color: sandybrown;
+    background-position: top;
+    background-image: url("images/audis5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carHonda {
+    background-color: sandybrown;
+    background-position: top;
+    background-image: url("images/Honda.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -13,9 +29,16 @@ nav li{
     border: 1px solid whitesmoke;
 }
 
-h1{font-size: 4em;
+h1 {
+    font-size: 4em;
     font-family: "Times New Roman";
-    color:#db1818;
+    color: #db1818;
+}
+
+h2{
+    font-size: 2em;
+    font-family: "Times New Roman";
+    color: silver;
 
 }
 

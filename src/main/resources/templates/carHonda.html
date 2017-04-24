@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thmyeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Cars</title>
+
+    <link rel="stylesheet" type="text/css" href="../static/styles.css" th:href="@{/styles.css}"/>
+    <h1>HONDA</h1>
+</head>
+<body id ="carHonda">
+<nav>
+    <ul>
+       <li><a href="index.html" th:href="@{/}">Car Make</a></li>
+        <li><a href="carFacts.html" th:href="@{/carFacts}">Car Year</a></li>
+        <li><a href="carHonda.html" th:href="@{/carHonda.html}">Car Model</a></li>
+
+    </ul>
+
+    <!--<form>-->
+        <!--<label>Car Year:</label>-->
+        <!--<select id = "Car Year :">-->
+            <!--<option value = "1">select</option>-->
+            <!--<option value = "2">1950</option>-->
+            <!--<option value = "3">1951</option>-->
+        <!--</select>-->
+
+        <!--&lt;!&ndash;<select name = "make" th:each="make:${makes}">&ndash;&gt;-->
+        <!--<select name = "make" th:each="make:${makes}">-->
+            <!--<option value = "1" th:text="${make.make_display}">select</option>-->
+
+            <!--<option value = "2" th:remove="all">Ford</option>-->
+            <!--<option value = "3" th:remove="all">Chevrolet</option>-->
+        <!--</select>-->
+    <!--</form>-->
+
+</nav>
+<!--<div th:text="${make}">body</div>-->
+<form action="index.html" th:action="@{/}" method="post">
+    <label>
+        <span>SEARCH:</span>
+        <input type="text" name="search" value="" th:value="${search}"/>
+    </label>
+    <button>Press Here</button>
+</form>
+<p> Welcome to Honda </p>
+
+
+
+
+</body>
+</html>
