@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8"/>
 
-    <title>Make/Model</title>
+    <title>Save/Edit Car</title>
 
     <link rel="stylesheet" type="text/css" href="../static/styles.css" th:href="@{/styles.css}"/>
 </head>
 <body id ="carFacts">
 <nav>
     <ul>
-        <li><a href="index.html" th:href="@{/}">Car Make</a></li>
+        <li><a href="index.html" th:href="@{/}">Car Home</a></li>
         <!--<li><a href="carHonda.html"th:href="@{/carFacts}">Car Year</a></li>-->
-        <li><a href="carHonda.html" th:href="@{/carHonda}">Car Model</a></li>
+        <li><a href="carHonda.html" th:href="@{/carHonda}">Car Search</a></li>
 
     </ul>
 </nav>
 <!--<div th:text="${car}">body</div>-->
-<h1>Make/Model</h1>
+<h1>Save/Edit Car</h1>
+<p>Use the form below to <span>add/edit</span> a car.</p>
 <form action="index.html" th:action="@{/saveCar}" method="post" th:object="${car}">
     <label>
         <span>Car Model:</span>
@@ -26,17 +27,17 @@
 
     <label>
         <span>Car Make:</span>
-        <input type="text" name="carMake" value="" th:value = "*{carMake}"/>
+        <input type="text" name="carMake" value="" th:value = "*{carMake}" required="required"/>
     </label>
 
     <label>
         <span>Car Year:</span>
-        <input type="text" name="carYear" value="" th:value = "*{carYear}"/>
+        <input type="text" name="carYear" value="" th:value = "*{carYear}" required="required"/>
     </label>
 
     <input type="hidden" name="carId" value="" th:value = "*{carId}"/>
 
-    <button>Save Car</button>
+    <button>Save/Edit</button>
 </form>
 </body>
 </html>

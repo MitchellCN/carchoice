@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,15 +20,16 @@ public class CarController {
     @Autowired
     CarsRepository carsRepository;
 
+    //searching for cars returning index html page
     @RequestMapping("/")
-    public String carlist(Model model, @RequestParam(defaultValue = "") String search) {
-
+   public String listCars(Model model, @RequestParam(defaultValue = "") String search) {
+//
         model.addAttribute("search", search);
         model.addAttribute("cars", carsRepository.listCars(search));
-
+//
         return "index";
     }
-
+//return carFacts page. if no car id exists it will add car id or it will let you add the car
     @RequestMapping("/carFacts")
     public String carFacts(Model model, Integer carId) {
 
@@ -42,24 +44,20 @@ public class CarController {
         return "carFacts";
     }
 
-    @RequestMapping("/carHonda")
-    public String carHonda(Model model, Integer carId) {
+    //Adding car to database
+    @RequestMapping("carHonda")
+    public String carslist(Model model, @RequestParam(defaultValue = "") String search) {
 
-        if (carId == null) {
-            Car car = new Car();
-            model.addAttribute("car", car);
+        model.addAttribute("search", search);
+        model.addAttribute("cars", carsRepository.listCars(search));
 
-        } else {
-            model.addAttribute("car", carsRepository.getCar(carId));
-
-        }
         return "carHonda";
     }
 
     @PostMapping("/saveCar")
-    public String saveCar(Car car){
+    public String saveCar(Car car) {
         carsRepository.saveCar(car);
-        return "redirect:/";
+        return "redirect:/carHonda";
     }
 
 //    @Autowired

@@ -4,6 +4,19 @@
     background-image: url("images/riviera4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+
+}
+nav{
+    color: ghostwhite;
+}
+
+.navigation{
+
+}
+
+li{
+    color: blue;
+    background-color: ghostwhite;
 }
 
 #carFacts{
@@ -27,27 +40,40 @@ nav li{
     padding: 0.25em;
     margin: 0.175em;
     border: 1px solid whitesmoke;
+    opacity: .8;
 }
 
 h1 {
     font-size: 4em;
     font-family: "Times New Roman";
-    color: #db1818;
+    color: ghostwhite;
 }
 
 h2{
     font-size: 2em;
     font-family: "Times New Roman";
-    color: silver;
+    color: ghostwhite;
 
 }
 
-label{color:snow;
+label{color:ghostwhite;
 
 }
 
 p{
     font-family: Inconsolata;
-    color: silver;
+    color: ghostwhite;
     font-size: 2em;
+}
+table{
+    color:black;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px;
+    margin: 15px;
+    opacity: .8;
+}
+table a{
+
+    color:black;
+
 }

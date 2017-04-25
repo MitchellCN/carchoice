@@ -10,9 +10,9 @@
 <body id ="carHonda">
 <nav>
     <ul>
-       <li><a href="index.html" th:href="@{/}">Car Make</a></li>
-        <li><a href="carFacts.html" th:href="@{/carFacts}">Car Year</a></li>
-        <li><a href="carHonda.html" th:href="@{/carHonda.html}">Car Model</a></li>
+       <li><a href="index.html" th:href="@{/}">Car Home</a></li>
+        <li><a href="carFacts.html" th:href="@{/carFacts}">Add/Edit Car</a></li>
+        <!--<li><a href="carHonda.html" th:href="@{/carHonda.html}">Car Model</a></li>-->
 
     </ul>
 
@@ -35,13 +35,38 @@
 
 </nav>
 <!--<div th:text="${make}">body</div>-->
-<form action="index.html" th:action="@{/}" method="post">
+<form action="carHonda.html" th:action="@{/carHonda}" method="post">
     <label>
-        <span>SEARCH:</span>
+        <span>Search Auto:</span>
         <input type="text" name="search" value="" th:value="${search}"/>
     </label>
-    <button>Press Here</button>
+    <button>Begin Search</button>
+    <!--<p>Showing <span th:text="${car.size()}"></span> Cars</p>-->
+
 </form>
+<p>Showing <span th:text="${cars.size()}"></span> cars.</p>
+<table>
+    <tr>
+        <!--shows the table head Sort by first name and another sort by last name-->
+        <th>
+            <a href="index.html" title="Sort by Car Model">Car Model</a>
+        </th>
+        <th>
+            <a href="index.html" title="Sort by Car Make">Car Make</a>
+        </th>
+        <th>
+            <a href="index.html" title="Sort by Car Make">Car Year</a>
+        </th>
+    </tr>
+    <tr th:each="car:${cars}">
+        <!--//adding th:text to show firstname and lastname not dogs-->
+        <td th:text="${car.getCarModel()}">Cosmo</td>
+        <td th:text="${car.getCarMake()}">Harper</td>
+        <td th:text="${car.getCarYear()}">Harper</td>
+        <!--adding th href thymeleaf to add person id to show in url-->
+        <td><a href="/" th:href="@{/carHonda/?carId=} + ${car.getCarId()}">Edit</a></td>
+    </tr>
+    </table>
 <p> Welcome to Honda </p>
 
 

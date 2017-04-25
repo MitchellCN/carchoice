@@ -5,14 +5,14 @@
     <title>Cars</title>
 
     <link rel="stylesheet" type="text/css" href="../static/styles.css" th:href="@{/styles.css}"/>
-    <h1>Car Style</h1>
+    <h1>Your Vehicle Database</h1>
 </head>
 <body id ="index">
 <nav>
-    <ul>
-        <li><a href="index.html" th:href="@{/}">Car Make</a></li>
-        <li><a href="carFacts.html" th:href="@{/carFacts}">Car Year</a></li>
-        <li><a href="carHonda.html" th:href="@{/carHonda}">Car Model</a></li>
+    <ul class="navigation">
+        <li><a href="index.html" th:href="@{/}">Car Home</a></li>
+        <li><a href="carFacts.html" th:href="@{/carFacts}">Save/Edit a Car</a></li>
+        <li><a href="carHonda.html" th:href="@{/carHonda}">Search for Cars</a></li>
 
     </ul>
 
@@ -37,7 +37,7 @@
 </nav>
 <!--<h2>Add/Edit Car</h2>-->
 <!--<p>Use the form below to <span> add/edit</span> a car</p>-->
-<!--&lt;!&ndash;<div th:text="${make}">body</div>&ndash;&gt;-->
+<!--<div th:text="${make}">body</div>-->
 <!--<form action="index.html" th:action="@{/saveCar}" method="post" th:object="${car}">-->
     <!--<label>-->
         <!--<span>Car Make</span>-->
@@ -45,18 +45,29 @@
     <!--</label>-->
     <!--<label>-->
         <!--<span>Car Model</span>-->
-        <!--<input type="text" name="carModel" value="" th:value="$*{carModel}"/>-->
+        <!--<input type="text" name="carModel" value="" th:value="*{carModel}"/>-->
     <!--</label>-->
     <!--<label>-->
         <!--<span>Car Year</span>-->
-        <!--<input type="text" name="carYear" value="" th:value="$*{carYearl}"/>-->
+        <!--<input type="text" name="carYear" value="" th:value="*{carYearl}"/>-->
     <!--</label>-->
 
     <!--<input type="hidden" name="carId" value="" th:value = "*{carId}"/>-->
 
     <!--<button>Save Here</button>-->
 <!--</form>-->
-<p> MAKE MODEL YEAR!!! </p>
+
+<div>
+<span>
+
+
+
+</span>
+
+
+
+</div>
+<p> All Vehicles </p>
 
 
 </body>

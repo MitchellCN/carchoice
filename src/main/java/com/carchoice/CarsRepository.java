@@ -30,7 +30,7 @@ public class CarsRepository {
 
     }
 
-
+//geting car id where none is available
     public Car getCar(Integer carId) {
         return jdbcTemplate.queryForObject("SELECT * FROM car_info WHERE carid = ?",
                 new Object[]{carId},
@@ -51,7 +51,7 @@ public class CarsRepository {
 
             jdbcTemplate.update(con -> {
                         PreparedStatement ps = con.prepareStatement(
-                                "INSERT INTO car(carmodel, carmake, caryear)" +
+                                "INSERT INTO car_info(carmodel, carmake, caryear)" +
                                         "VALUES (?,?,?)",
                                 Statement.RETURN_GENERATED_KEYS);
                         ps.setString(1, car.getCarModel());
